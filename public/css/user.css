@@ -1,0 +1,53 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+body,html{
+  height:100%;
+  width:100%;
+}
+body{
+  background:url(../img/bg1.jpg) no-repeat;
+  background-size:100% 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* user */
+#user{
+  width:30%;
+  background:rgba(180,180,180,0.8);
+  padding: 0 20px 20px;
+  border-radius: 10px;
+}
+#user .btn{
+  width:100%;
+  font-weight:bold;
+  font-size:20px;
+}
+#user h1{
+  text-align: center;
+}
+#user h1 img{
+  width:80%;
+  height:90px;
+  margin-bottom:20px;
+}
+#user .text-danger{
+  font-size:12px;
+  font-weight:bold;
+  cursor: pointer;
+}
+.auth_box{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.auth_box input{
+  width:60%;
+}
+.auth_box svg{
+  width:35%;
+  height:32px;
+}
