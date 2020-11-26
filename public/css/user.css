@@ -50,4 +50,5 @@ body{
 .auth_box svg{
   width:35%;
   height:32px;
+  border-radius:5px;
 }
