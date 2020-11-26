@@ -1,11 +1,13 @@
 class AddBook {
     constructor() {
         this.container = $('#listRightCon');
+        this.booksInfo = {};
         this.init();
     }
     init() {
         this.writeContent();
         this.upload();
+        this.bookDateSub();
     }
     writeContent() {
         this.container.html(AddBook.template);
@@ -40,36 +42,66 @@ class AddBook {
         if(data.data.code == 1){
             let createImg = $('<img>');
             createImg.attr('src',data.data.url);
+            // 存储一下图片路径,做数据上传
+            this.booksInfo.booksimgurl =  data.data.url
             $('.bookImg .imgBox').html(createImg);
         }else{
             alert('请重新上传图片')
         }
     }
+    // 书籍数据提交
+    bookDateSub(){
+        $('#addBookForm').on('submit',this.handleBookDateSub.bind(this));
+    }
+    handleBookDateSub(e){
+        e.preventDefault();
+        var _this = this;
+        // 对前端输入框数据进行获取
+        this.booksInfo.bookname = $('.bookname').val();
+        this.booksInfo.bookauthor = $('.bookauthor').val();
+        this.booksInfo.bookdes = $('.bookdes').val();
+        this.booksInfo.booktype = $('.booktype').val();
+        this.booksInfo.bookstatus = $('.bookstatus').val();
+
+        // ajax做数据传输
+        $.ajax({
+            method : 'post',
+            url : '/book/addbook',
+            data : _this.booksInfo,
+            success:this.handleGetAddBook.bind(this)
+        })
+    }
+    handleGetAddBook(data){
+        if(data.data.code == 1){
+            alert('书籍添加成功')
+            new Tabbar().handleTabBar(2);
+        }
+    }
 }
 AddBook.template = `
     <section class="addBookBox">
-        <form>
+        <form id="addBookForm">
             <div class="form-group">
                 <label>书籍名称</label>
-                <input type="text" class="form-control"">
+                <input type="text" class="form-control bookname">
             </div>
             <div class="form-group">
                 <label>书籍作者</label>
-                <input type="text" class="form-control"">
+                <input type="text"  class="form-control bookauthor">
             </div>
             <div class="form-group">
                 <label>书籍描述</label>
-                <textarea class="form-control" rows="3"></textarea>
+                <textarea class="form-control bookdes" rows="3"></textarea>
             </div>
             <div class="form-group">
                 <label>书籍类型</label>
-                <input type="text" class="form-control"">
+                <input type="text" class="form-control booktype">
             </div>
             <div class="form-group">
                 <label>书籍状态</label>
-                <select class="form-control">
-                    <option>已经完结</option>
-                    <option>连载中...</option>
+                <select class="form-control bookstatus" >
+                    <option value="已经完结">已经完结</option>
+                    <option value="连载中...">连载中...</option>
                 </select>
             </div>
             <div class="form-group">

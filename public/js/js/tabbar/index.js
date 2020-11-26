@@ -37,4 +37,4 @@ class Tabbar {
         }
     }
 }
-new Tabbar
+new Tabbar();
