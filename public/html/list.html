@@ -1,11 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/list.css">
 </head>
+
 <body>
-    <h1>lis页面</h1>
+    <!-- 顶部导航 -->
+    <nav class="navbar navbar-default navbar-inverse">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">后台管理系统</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="#">磨铁中文网 <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">默默网</a></li>
+
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                            aria-expanded="false">Bruce <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">个人中心</a></li>
+                            <li><a href="#">退出登陆</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+
+    <!-- 内容区域 -->
+    <div id="listContent">
+        <ul id="listLeftBar">
+            <li>首页</li>
+            <li>添加书籍</li>
+            <li>书籍管理</li>
+            <li>用户管理</li>
+            <li>文章管理</li>
+            <li>个人中心</li>
+        </ul>
+        <div id="listRightCon"></div>
+    </div>
+
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
+        crossorigin="anonymous"></script>
+    <script src="../js/js/listcontent/home.js"></script>
+    <script src="../js/js/listcontent/addbook.js"></script>
+    <script src="../js/js/listcontent/bookcontrol.js"></script>
+    <script src="../js/js/listcontent/usercontrol.js"></script>
+    <script src="../js/js/listcontent/myself.js"></script>
+    <script src="../js/js/listcontent/articlecontrol.js"></script>
+    <script src="../js/js/tabbar/index.js"></script>
 </body>
+
 </html>
