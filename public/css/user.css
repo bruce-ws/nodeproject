@@ -7,6 +7,12 @@ body,html{
   height:100%;
   width:100%;
 }
+.position_center{
+  position: absolute;
+  left:0;right:0;
+  top:0;bottom:0;
+  margin:auto;
+}
 body{
   background:url(../img/bg1.jpg) no-repeat;
   background-size:100% 100%;
@@ -52,3 +58,8 @@ body{
   height:32px;
   border-radius:5px;
 }
+
+
+
+
+

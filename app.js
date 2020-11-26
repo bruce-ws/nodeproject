@@ -6,6 +6,7 @@ var logger = require('morgan');
 var favicon = require('serve-favicon')
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var uploadRouter = require('./routes/upload');
 var session = require('cookie-session');
 var app = express();
 
@@ -33,6 +34,7 @@ app.use(session({
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/upload', uploadRouter);
 
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 
