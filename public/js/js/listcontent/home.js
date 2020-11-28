@@ -10,4 +10,6 @@ class Home{
         this.container.html(Home.template);
     }
 }
-Home.template = `<h2>首页</h2>`
+Home.template = `
+    <section id="listHome"></section>
+`

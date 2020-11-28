@@ -5,7 +5,7 @@ class Tabbar {
     }
     init() {
         this.liClickBind();
-        this.handleTabBar(0);
+        this.handleTabBar(2);
     }
     liClickBind() {
         this.liBtn.each(this.handleEventBind.bind(this));

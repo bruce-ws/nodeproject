@@ -9,6 +9,7 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/list.css">
+    <link rel="stylesheet" href="../js/plugins/layui/css//layui.css">
 </head>
 
 <body>
@@ -57,10 +58,62 @@
     </div>
 
 
-    
+
+    <!-- 模态框 -->
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">对数据进行修改</h4>
+                </div>
+                <div class="modal-body">
+                    <form id="amendBookForm">
+                        <input type="hidden" class="saveId" value="">
+                        <div class="form-group">
+                            <label>书籍名称</label>
+                            <input type="text" class="form-control bookname">
+                        </div>
+                        <div class="form-group">
+                            <label>书籍作者</label>
+                            <input type="text" class="form-control bookauthor">
+                        </div>
+                        <div class="form-group">
+                            <label>书籍描述</label>
+                            <textarea class="form-control bookdes" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>书籍类型</label>
+                            <input type="text" class="form-control booktype">
+                        </div>
+                        <div class="form-group">
+                            <label>书籍状态</label>
+                            <select class="form-control bookstatus">
+                                <option value="已经完结">已经完结</option>
+                                <option value="连载中...">连载中...</option>
+                            </select>
+                        </div>
+                        <!-- <button type="submit" class="btn btn-success">添加书籍</button> -->
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary btnUpdata">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
         crossorigin="anonymous"></script>
+    <script src="../js/plugins/layui/layui.js"></script>
     <script src="../js/js/listcontent/home.js"></script>
     <script src="../js/js/listcontent/addbook.js"></script>
     <script src="../js/js/listcontent/bookcontrol.js"></script>
